@@ -1,10 +1,8 @@
-
 package com.mycompany.parkolohaz_szimulator;
 
-
-/**
- * Minden jármű közös őse. A díjszámítást az alosztályok adják meg,
- * a parkolóház csak a dij() metódust hívja, nem foglalkozik a típussal.
+/*
+ * Common base class of all vehicles. Each subclass defines its own fee,
+ * the parking garage only calls dij() and never checks the vehicle type.
  */
 public abstract class Jarmu {
 
@@ -18,29 +16,22 @@ public abstract class Jarmu {
         return rendszam;
     }
 
-    /** Díj lejben a parkolt percek alapján. */
+    /* Fee in lei, based on the number of parked minutes. */
     public abstract double dij(long percek);
 
-    /** Emberi név a kiíráshoz és a statisztikához (pl. "Autó"). */
+    /* Human readable type name for printing and statistics. */
     public abstract String getTipusNev();
 
-    /**
-     * Rendszám ellenőrzése és egységes alakra hozása.
-     * Szóközt és kötőjelet kiveszünk, nagybetűsítünk, így az "ms-12-abc"
-     * és az "MS 12 ABC" ugyanaz lesz.
+    /*
+     * Validates the license plate and brings it to a common format.
+     * Spaces and dashes are removed and letters are uppercased,
+     * so "ms-12-abc" and "MS 12 ABC" both become "MS12ABC".
      */
-    static String normalizal(String rendszam) {
-        if (rendszam == null) {
-            throw new IllegalArgumentException("A rendszám nem lehet null");
+   static String normalizal(String rendszam) {
+        if (rendszam == null || rendszam.trim().isEmpty()) {
+            throw new IllegalArgumentException("A rendszam nem lehet ures");
         }
-        String r = rendszam.replaceAll("[\\s-]", "").toUpperCase();
-        if (r.isEmpty()) {
-            throw new IllegalArgumentException("A rendszám nem lehet üres");
-        }
-        if (!r.matches("[A-Z0-9]{2,10}")) {
-            throw new IllegalArgumentException("Érvénytelen rendszám: " + rendszam);
-        }
-        return r;
+        return rendszam.trim().toUpperCase();
     }
 
     @Override
