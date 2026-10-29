@@ -12,10 +12,6 @@ electric cars can enter and leave, and each vehicle type has its own fee.
 | Kisbusz | 15 min | 8 lei | 60 lei |
 | Elektromos autó | like a car + charging | | |
 
-## UML
-
-![UML](docs/uml.png)
-
 ## Example output
 
 Option 5 moves the clock forward, so the fees can be shown without waiting.
