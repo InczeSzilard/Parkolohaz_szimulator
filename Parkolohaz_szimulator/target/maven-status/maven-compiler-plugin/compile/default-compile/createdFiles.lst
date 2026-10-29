@@ -1,0 +1,14 @@
+com\mycompany\parkolohaz_szimulator\Jarmu.class
+com\mycompany\parkolohaz_szimulator\ElektromosAuto.class
+com\mycompany\parkolohaz_szimulator\TeltHazException.class
+com\mycompany\parkolohaz_szimulator\Parkolohaz.class
+com\mycompany\parkolohaz_szimulator\AlithatoOra.class
+com\mycompany\parkolohaz_szimulator\Ora.class
+com\mycompany\parkolohaz_szimulator\Auto.class
+com\mycompany\parkolohaz_szimulator\Kisbusz.class
+com\mycompany\parkolohaz_szimulator\Motor.class
+com\mycompany\parkolohaz_szimulator\Tarifa.class
+com\mycompany\parkolohaz_szimulator\DuplikaltException.class
+com\mycompany\parkolohaz_szimulator\Parkolohaz_szimulator.class
+com\mycompany\parkolohaz_szimulator\RendszamException.class
+com\mycompany\parkolohaz_szimulator\RendszerOra.class
